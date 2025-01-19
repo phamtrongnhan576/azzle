@@ -8,7 +8,18 @@ module.exports = {
             },
             backgroundColor: {
                 "main-color": "#efeae3",
-                "test-color": "red",
+                "separator-color": "rgb(25, 25, 25)",
+                linenYellow: "rgb(239 234 227)",
+            },
+            fontFamily: {
+                sans: ["DM Sans", "sans-serif"],
+            },
+            colors: {
+                descColor: "#191919",
+                footerTextHover: "#fe330a",
+            },
+            borderColor: {
+                codGray: "rgb(25, 25, 25)",
             },
         },
     },

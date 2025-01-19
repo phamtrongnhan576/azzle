@@ -16,19 +16,15 @@ body {
     width: 1332px;
     max-width: calc(100% - 48px);
 }
+/* common */
+
 .btn {
-    @apply relative outline-none rounded-full border-[#7F8995] hover:text-white overflow-hidden flex items-center text-center;
+    @apply relative px-[25px] py-[10px] outline-none rounded-full border-[#7F8995] hover:text-white overflow-hidden flex justify-center items-center text-center font-bold leading-[1.5];
     z-index: 1;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 700;
-    line-height: 1.5;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
-    border: 0.5px solid;
+    border: 1px solid black;
 }
 
 .btn::after {
@@ -49,6 +45,21 @@ body {
 }
 .btn:hover::after {
     transform: translateY(100%);
+}
+
+.heading {
+    @apply font-sans text-[8rem] font-[700] tracking-[-2] leading-[1];
+}
+
+.desc,
+.desc-large {
+    @apply text-descColor;
+}
+.desc-large {
+    font-size: 2.1rem;
+}
+.desc {
+    font-size: 1.8rem;
 }
 
 /* Header */
@@ -115,21 +126,118 @@ body {
     @apply text-red-600;
 }
 .sub-menu__item .sub-menu__child {
-    @apply opacity-0, hidden;
     top: 20%;
     left: 102%;
 }
 .sub-menu__item .sub-menu__child::before {
     content: none;
 }
+
 /* Banner */
 .banner {
-    @apply bg-main-color;
-    height: 100px;
-    padding-top: 195px;
+    @apply bg-main-color  relative overflow-hidden;
+    padding-top: 70px;
+    padding-bottom: 133px;
+    border-radius: 0px 0px 30px 30px;
 }
 
-.test{
-    font-size: 10rem;
-    color: red;
+.banner__heading {
+    @apply text-center font-bold mb-6;
+    max-width: 1075px;
+    font-size: 11rem;
+    line-height: 1.1;
+}
+
+.banner__desc {
+    @apply text-center font-semibold;
+    font-size: 2rem;
+    max-width: 980px;
+}
+
+.banner-cta {
+    margin-top: 40px;
+}
+.btn-banner {
+    line-height: 2.3;
+}
+
+.banner-img {
+    margin: 100px 0;
+    width: 1300px;
+    height: 600px;
+}
+
+.circle {
+    background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
+    filter: blur(50px);
+}
+
+.banner-brand {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #dbd6cf;
+}
+
+.brand__logo {
+    width: 175px;
+    height: 40px;
+}
+
+/* pricing */
+.pricing-group__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--before-left, 0%);
+    width: 50%; /* Mặc định 50% chiều rộng */
+    height: 100%;
+    border-radius: inherit;
+    background-color: black;
+    transition: left 0.3s ease; /* Hiệu ứng mượt khi chuyển đổi */
+}
+
+/* accordion */
+.accordion-content {
+    height: 0px;
+    opacity: 0;
+    transform: translateY(30px);
+    overflow: hidden;
+}
+.accordion-item {
+    cursor: pointer;
+}
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(-45deg);
+}
+
+.accordion-item.active .accordion-content {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0px);
+    margin-top: 15px;
+    transition: 0.5s;
+}
+
+/* footer */
+@keyframes moveRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.footer-slider {
+    animation: moveRightToLeft 10s linear infinite;
+}
+
+.footer__btn::placeholder {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #b2b8c1;
+    font-weight: 600;
 }
