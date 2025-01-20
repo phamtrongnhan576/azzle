@@ -7,20 +7,19 @@
 
         <!-- Favicon -->
         <link rel="icon" href="./image/favicon.png" />
+
+        <!-- AOS -->
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
             rel="stylesheet"
         />
-        <!-- Icon -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+
         <!-- Owl Carousel -->
         <link
             rel="stylesheet"
@@ -184,12 +183,12 @@
                 </nav>
             </div>
         </header>
-        <main>
+        <main class="overflow-hidden">
             <section class="banner">
                 <div
                     class="container flex justify-center flex-col items-center"
                 >
-                    <div>
+                    <div data-aos="fade-up">
                         <h1 class="banner__heading">
                             Simplify your SaaS solution with AI
                         </h1>
@@ -219,7 +218,7 @@
                         class="absolute w-[400px] h-[400px] rounded-full bg-red-500 top-[500px] right-[50px] circle"
                     ></div>
 
-                    <div class="banner-img relative es">
+                    <div class="banner-img relative" data-aos="zoom-in">
                         <img
                             src="./image/hero-dashboard.jpg"
                             class="w-full h-full object-cont"
@@ -228,13 +227,14 @@
                     </div>
 
                     <div class="banner-brand">
-                        <p class="desc mt-[100px]">
+                        <p class="desc mt-[100px]" data-aos="fade-up">
                             Companies of all sizes trust us to find AI SaaS
                             critical to their growth and innovation
                         </p>
 
                         <div
                             class="mt-[50px] ml-[30px] flex justify-evenly items-center owl-carousel"
+                            data-aos="fade"
                         >
                             <div class="brand__logo">
                                 <img
@@ -277,12 +277,14 @@
             </section>
             <section class="service pt-[130px] pb-[150px]">
                 <div class="container">
-                    <h2 class="heading w-[724px] mb-[60px]">
+                    <h2 class="heading w-[724px] mb-[60px]" data-aos="fade-up">
                         Core features that make it valuable
                     </h2>
                     <!-- service list -->
                     <ul
                         class="grid grid-cols-4 border-[2px] border-black rounded-[10px]"
+                        data-aos="fade-up"
+                        data-aos-delay="500"
                     >
                         <!-- item 1 -->
                         <li class="p-[30px] group hover:bg-black">
@@ -466,14 +468,17 @@
                 <div class="container">
                     <!-- content 1 -->
                     <div class="flex items-center justify-between pb-[150px]">
-                        <figure class="w-[45%]">
+                        <figure class="w-[45%]" data-aos="fade-left">
                             <img
                                 src="./image/content-image-1.jpg"
                                 alt=""
                                 class="w-full h-full object-cover"
                             />
                         </figure>
-                        <article class="w-[570px] text-justify">
+                        <article
+                            class="w-[570px] text-justify"
+                            data-aos="fade-right"
+                        >
                             <h2 class="heading mb-[30px]">
                                 Accessible to a wider audience
                             </h2>
@@ -495,14 +500,14 @@
                     <div
                         class="flex flex-row-reverse items-center justify-between"
                     >
-                        <figure class="w-[45%]">
+                        <figure class="w-[45%]" data-aos="fade-left">
                             <img
                                 src="./image/content-image-2.jpg"
                                 alt=""
                                 class="w-full h-full object-cover"
                             />
                         </figure>
-                        <article class="w-[620px]">
+                        <article class="w-[620px]" data-aos="fade-right">
                             <h2 class="heading mb-[30px]">
                                 Providing quick deploy solutions
                             </h2>
@@ -539,7 +544,8 @@
             <section class="funfact pt-[150px]">
                 <div class="mx-auto max-w-[1500px] px-5">
                     <div
-                        class="grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]"
+                        class="relative z-20 grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]"
+                        data-aos="fade-up"
                     >
                         <!-- Fun Fact media -->
                         <div
@@ -639,11 +645,14 @@
 
                 <div class="container">
                     <div class="grid justify-center relative">
-                        <h2 class="heading w-[700px] text-center mx-auto">
+                        <h2
+                            class="heading w-[700px] text-center mx-auto"
+                            data-aos="fade-up"
+                        >
                             Cost-effectively build any software
                         </h2>
                         <!-- Pricing Button -->
-                        <div class="flex justify-center mt-20">
+                        <div class="flex justify-center mt-20" data-aos="fade">
                             <div
                                 class="relative pricing-group__btn inline-flex items-center rounded-[50px] border-black border-2 font-semibold"
                             >
@@ -668,6 +677,7 @@
                             <!-- item 1 -->
                             <li
                                 class="p-[40px] bg-main-color rounded-[10px] group hover:bg-black"
+                                data-aos="flip-left"
                             >
                                 <a href="#!">
                                     <h3
@@ -720,6 +730,7 @@
                             <!-- item 2 -->
                             <li
                                 class="p-[40px] bg-main-color rounded-[10px] group hover:bg-black"
+                                data-aos="flip-left"
                             >
                                 <a href="#!">
                                     <h3
@@ -772,6 +783,7 @@
                             <!-- item 3 -->
                             <li
                                 class="p-[40px] bg-main-color rounded-[10px] group hover:bg-black"
+                                data-aos="flip-left"
                             >
                                 <a href="#!">
                                     <h3
@@ -828,7 +840,7 @@
             <section class="faq pt-[130px] pb-[150px]">
                 <div class="container">
                     <div class="grid grid-cols-2">
-                        <article>
+                        <article data-aos="fade-right">
                             <h2 class="heading mb-[16px]">
                                 Freely ask us for more information
                             </h2>
@@ -848,7 +860,10 @@
                             </button>
                         </article>
                         <!-- Accordion-->
-                        <div class="md:ml-10 lg:ml-20 xl:ml-32 jos">
+                        <div
+                            class="md:ml-10 lg:ml-20 xl:ml-32"
+                            data-aos="fade-left"
+                        >
                             <ul class="accordion">
                                 <!--item 1-->
                                 <li
@@ -942,7 +957,10 @@
             </section>
             <section class="testimonial bg-black pt-[130px] pb-[200px]">
                 <div class="container">
-                    <h2 class="heading text-white text-center mb-[70px]">
+                    <h2
+                        class="heading text-white text-center mb-[70px]"
+                        data-aos="fade-up"
+                    >
                         Positive feedback <br />
                         from our users
                     </h2>
@@ -952,7 +970,9 @@
                     >
                         <!-- item 1 -->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-left"
+                            data-aos-delay="100"
                         >
                             <div class="block">
                                 <img
@@ -995,7 +1015,9 @@
                         </div>
                         <!-- item 2 -->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-left"
+                            data-aos-delay="200"
                         >
                             <div class="block">
                                 <img
@@ -1038,7 +1060,9 @@
                         </div>
                         <!-- item 3 -->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-left"
+                            data-aos-delay="300"
                         >
                             <div class="block">
                                 <img
@@ -1081,7 +1105,9 @@
                         </div>
                         <!-- item 4-->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-right"
+                            data-aos-delay="100"
                         >
                             <div class="block">
                                 <img
@@ -1124,7 +1150,9 @@
                         </div>
                         <!-- item 5 -->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-right"
+                            data-aos-delay="200"
                         >
                             <div class="block">
                                 <img
@@ -1167,7 +1195,9 @@
                         </div>
                         <!-- item 6 -->
                         <div
-                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white jos"
+                            class="flex flex-col gap-y-8 rounded-[10px] border-[1px] border-codGray p-[30px] text-white"
+                            data-aos="fade-right"
+                            data-aos-delay="300"
                         >
                             <div class="block">
                                 <img
@@ -1427,17 +1457,6 @@
             </div>
         </footer>
 
-        <!-- flowbite -->
-        <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-
-        <!-- Icon -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-            integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-
         <!-- jquery  -->
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -1479,6 +1498,14 @@
             $(".counter").countUp({
                 time: 2000,
                 delay: 10,
+            });
+        </script>
+
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                once: true,
             });
         </script>
 

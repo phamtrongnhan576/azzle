@@ -1962,6 +1962,11 @@ input:checked + .toggle-bg {
   padding-bottom: 20px;
 }
 
+.py-\[36px\] {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
 .py-\[60px\] {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -1970,16 +1975,6 @@ input:checked + .toggle-bg {
 .py-\[80px\] {
   padding-top: 80px;
   padding-bottom: 80px;
-}
-
-.py-9 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.py-\[36px\] {
-  padding-top: 36px;
-  padding-bottom: 36px;
 }
 
 .pb-6 {
@@ -2673,6 +2668,11 @@ body {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+.hover\:text-footerTextHover:hover {
+  --tw-text-opacity: 1;
+  color: rgb(254 51 10 / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -2686,11 +2686,6 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-footerTextHover:hover {
-  --tw-text-opacity: 1;
-  color: rgb(254 51 10 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
