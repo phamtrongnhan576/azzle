@@ -19,6 +19,12 @@
             href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
             rel="stylesheet"
         />
+        <!-- Font Awesome -->
+
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
 
         <!-- Owl Carousel -->
         <link
@@ -37,7 +43,7 @@
                         <img src="./image/logo-dark.png" alt="Azzle Logo" />
                     </a>
                     <!-- Header Nav -->
-                    <ul class="nav-list flex">
+                    <ul id="pc-nav" class="nav-list hidden lg:flex">
                         <li class="nav-item">
                             <a href="#!">Demo</a>
                             <i class="fa-solid fa-angle-down"></i>
@@ -170,9 +176,17 @@
                         <li class="nav-item">
                             <a href="#!">Contact</a>
                         </li>
+                        <li
+                            class="nav-item mt-[10px] lg:hidden border-t border-[#DBD6CF]"
+                        >
+                            <a href="#!">Login</a>
+                        </li>
+                        <li class="nav-item lg:hidden">
+                            <a href="#!">Sign Up</a>
+                        </li>
                     </ul>
                     <!-- Header CTA -->
-                    <div class="flex gap-6">
+                    <div class="hidden lg:flex gap-6">
                         <a class="btn" href="/login">
                             <span class="relative z-10"> Login</span>
                         </a>
@@ -180,7 +194,45 @@
                             <span class="relative z-10">Sign up free</span></a
                         >
                     </div>
+                    <!-- Tablet / Mobile Menu -->
+                    <label
+                        for="menu-checkbox"
+                        class="toggle-menu lg:hidden w-[24px] py-[30px]"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
                 </nav>
+            </div>
+        </header>
+        <!-- Tablet / Mobile Header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name="checkbox"
+                id="menu-checkbox"
+                class="menu-checkbox hidden"
+            />
+            <!-- menu overlay -->
+            <label
+                for="menu-checkbox"
+                class="fixed inset-0 bg-black bg-opacity-30 z-10 opacity-0 invisible transition-opacity duration-500 ease-in-out menu-overlay"
+            ></label>
+            <!-- menu content -->
+            <div
+                class="menu-drawer p-16 fixed inset-y-0 left-0 bg-white z-20 transform -translate-x-full transition-transform duration-500 ease-in-out"
+            >
+                <a href="/" class="flex justify-center p-[25px]">
+                    <img src="./image/logo-dark.png" alt="Azzle" />
+                </a>
+                <ul id="mobile-nav"></ul>
             </div>
         </header>
         <main class="overflow-hidden">
@@ -188,9 +240,10 @@
                 <div
                     class="container flex justify-center flex-col items-center"
                 >
-                    <div data-aos="fade-up">
+                    <div class="relative z-10" data-aos="fade-up">
                         <h1 class="banner__heading">
-                            Simplify your SaaS solution with AI
+                            Simplify your SaaS <br />
+                            solution with AI
                         </h1>
                         <p class="banner__desc">
                             Our AI SAAS tool is a cloud-based software delivery
@@ -200,7 +253,9 @@
                         </p>
                     </div>
 
-                    <div class="banner-cta flex gap-7">
+                    <div
+                        class="banner-cta flex sm:flex-row flex-col gap-7 relative z-10"
+                    >
                         <a href="#!" class="btn btn-banner bg-black text-white">
                             <span class="relative z-10">
                                 Get stared for free</span
@@ -218,10 +273,10 @@
                         class="absolute w-[400px] h-[400px] rounded-full bg-red-500 top-[500px] right-[50px] circle"
                     ></div>
 
-                    <div class="banner-img relative" data-aos="zoom-in">
+                    <div class="py-[100px] w-full relative" data-aos="zoom-in">
                         <img
                             src="./image/hero-dashboard.jpg"
-                            class="w-full h-full object-cont"
+                            class="w-full h-full object-center"
                             alt=""
                         />
                     </div>
@@ -231,44 +286,44 @@
                             Companies of all sizes trust us to find AI SaaS
                             critical to their growth and innovation
                         </p>
-
+                        <!-- owl-carousel -->
                         <div
-                            class="mt-[50px] ml-[30px] flex justify-evenly items-center owl-carousel"
+                            class="mt-[50px] w-full flex items-center overflow-hidden owl-carousel"
                             data-aos="fade"
                         >
-                            <div class="brand__logo">
+                            <div class="flex-shrink-0 mx-[50px] h-[32px]">
                                 <img
                                     src="./image/brand-1.png"
-                                    class="object-cover w-full"
-                                    alt=""
+                                    class="w-full h-full"
+                                    alt="Logo 1"
                                 />
                             </div>
-                            <div class="brand__logo">
+                            <div class="flex-shrink-0 mx-[50px] h-[32px]">
                                 <img
                                     src="./image/brand-2.png"
-                                    class="object-cover w-full"
-                                    alt=""
+                                    class="w-full h-full"
+                                    alt="Logo 2"
                                 />
                             </div>
-                            <div class="brand__logo">
+                            <div class="flex-shrink-0 mx-[50px] h-[32px]">
                                 <img
                                     src="./image/brand-3.png"
-                                    class="object-cover w-full"
-                                    alt=""
+                                    class="w-full h-full"
+                                    alt="Logo 3"
                                 />
                             </div>
-                            <div class="brand__logo">
+                            <div class="flex-shrink-0 mx-[50px] h-[32px]">
                                 <img
                                     src="./image/brand-4.png"
-                                    class="object-cover w-full"
-                                    alt=""
+                                    class="w-full h-full"
+                                    alt="Logo 4"
                                 />
                             </div>
-                            <div class="brand__logo">
+                            <div class="flex-shrink-0 mx-[50px] h-[32px]">
                                 <img
                                     src="./image/brand-5.png"
-                                    class="object-cover w-full"
-                                    alt=""
+                                    class="w-full h-full"
+                                    alt="Logo 5"
                                 />
                             </div>
                         </div>
@@ -277,12 +332,15 @@
             </section>
             <section class="service pt-[130px] pb-[150px]">
                 <div class="container">
-                    <h2 class="heading w-[724px] mb-[60px]" data-aos="fade-up">
+                    <h2
+                        class="heading lg:w-[624px] xl:w-[724px] mb-[60px]"
+                        data-aos="fade-up"
+                    >
                         Core features that make it valuable
                     </h2>
                     <!-- service list -->
                     <ul
-                        class="grid grid-cols-4 border-[2px] border-black rounded-[10px]"
+                        class="grid sm:grid-cols-2 lg:grid-cols-4 border-[2px] border-black rounded-[10px]"
                         data-aos="fade-up"
                         data-aos-delay="500"
                     >
@@ -304,7 +362,7 @@
                                     />
                                 </figure>
                                 <h3
-                                    class="text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
+                                    class="text-[2rem] lg:text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
                                 >
                                     Resource Flexibility
                                 </h3>
@@ -331,7 +389,7 @@
 
                         <!-- item 2 -->
                         <li
-                            class="p-[30px] border-l-2 border-black group hover:bg-black"
+                            class="p-[30px] border-l-0 sm:border-l-2 border-t-2 md:border-t-0 border-black group hover:bg-black"
                         >
                             <a href="#!" class="relative">
                                 <figure class="mb-[24px] w-[70px] h-[70px]">
@@ -349,7 +407,7 @@
                                     />
                                 </figure>
                                 <h3
-                                    class="text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
+                                    class="text-[2rem] lg:text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
                                 >
                                     Managed Services
                                 </h3>
@@ -375,7 +433,7 @@
                         </li>
                         <!-- item 3 -->
                         <li
-                            class="p-[30px] border-l-2 border-black group hover:bg-black"
+                            class="p-[30px] border-l-0 sm:border-l-0 lg:border-l-2 border-t-2 lg:border-t-0 rounded-bl-[10px] lg:rounded-bl-[0px] border-black group hover:bg-black"
                         >
                             <a href="#!" class="relative">
                                 <div class="mb-[24px] w-[70px] h-[70px]">
@@ -393,7 +451,7 @@
                                     />
                                 </div>
                                 <h3
-                                    class="text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
+                                    class="text-[2rem] lg:text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
                                 >
                                     Web-Based Access
                                 </h3>
@@ -419,7 +477,7 @@
                         </li>
                         <!-- item 4 -->
                         <li
-                            class="p-[30px] border-l-2 border-black group hover:bg-black"
+                            class="p-[30px] border-l-0 sm:border-l-2 border-t-2 lg:border-t-0 border-black group hover:bg-black"
                         >
                             <a href="#!" class="relative">
                                 <div class="mb-[24px] w-[70px] h-[70px]">
@@ -437,7 +495,7 @@
                                     />
                                 </div>
                                 <h3
-                                    class="text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
+                                    class="text-[2rem] lg:text-[2.8rem] font-bold leading-[2] tracking-[-0.5px] mb-[16px] group-hover:text-white"
                                 >
                                     Resource Flexibility
                                 </h3>
@@ -467,18 +525,17 @@
             <section class="solution">
                 <div class="container">
                     <!-- content 1 -->
-                    <div class="flex items-center justify-between pb-[150px]">
-                        <figure class="w-[45%]" data-aos="fade-left">
+                    <div
+                        class="flex flex-col-reverse gap-[60px] lg:flex-row md:items-center md:justify-between pb-[150px]"
+                    >
+                        <figure class="w-full lg:w-[45%]" data-aos="fade-left">
                             <img
                                 src="./image/content-image-1.jpg"
                                 alt=""
                                 class="w-full h-full object-cover"
                             />
                         </figure>
-                        <article
-                            class="w-[570px] text-justify"
-                            data-aos="fade-right"
-                        >
+                        <article class="lg:w-[570px]" data-aos="fade-right">
                             <h2 class="heading mb-[30px]">
                                 Accessible to a wider audience
                             </h2>
@@ -498,16 +555,16 @@
                     </div>
                     <!-- content 2 -->
                     <div
-                        class="flex flex-row-reverse items-center justify-between"
+                        class="flex gap-[60px] flex-col-reverse lg:flex-row-reverse items-center justify-between"
                     >
-                        <figure class="w-[45%]" data-aos="fade-left">
+                        <figure class="w-full lg:w-[45%]" data-aos="fade-left">
                             <img
                                 src="./image/content-image-2.jpg"
                                 alt=""
                                 class="w-full h-full object-cover"
                             />
                         </figure>
-                        <article class="w-[620px]" data-aos="fade-right">
+                        <article class="lg:w-[620px]" data-aos="fade-right">
                             <h2 class="heading mb-[30px]">
                                 Providing quick deploy solutions
                             </h2>
@@ -518,19 +575,19 @@
                                 development times in fast-paced industries.
                             </p>
                             <ul
-                                class="text-[2.5rem] font-bold mt-[40px] grid gap-[10px] tracking-[-0.02em] leading-[1.25]"
+                                class="text-[2.5rem] font-bold mt-[40px] grid gap-[20px] tracking-[-0.02em] leading-[1.25]"
                             >
-                                <li class="flex gap-x-[30px]">
+                                <li class="flex gap-x-[30px] text-[2.3rem]">
                                     <img src="./icon/check-circle.svg" alt="" />
                                     <p>Ready-to-use AI capabilities system</p>
                                 </li>
-                                <li class="flex gap-x-[30px]">
+                                <li class="flex gap-x-[30px] text-[2.3rem]">
                                     <img src="./icon/check-circle.svg" alt="" />
                                     <p>
                                         Users can quickly integrate AI features
                                     </p>
                                 </li>
-                                <li class="flex gap-x-[30px]">
+                                <li class="flex gap-x-[30px] text-[2.3rem]">
                                     <img src="./icon/check-circle.svg" alt="" />
                                     <p>
                                         Time savings translate to cost savings
@@ -556,7 +613,7 @@
                                 alt="funfact-image"
                                 width="721"
                                 height="784"
-                                class="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full"
+                                class="h-[320px] w-full object-cover object-center lg:h-[35rem] xl:h-full"
                             />
 
                             <a
@@ -576,7 +633,7 @@
                         </div>
 
                         <!-- Fun Fact content -->
-                        <div class="flex justify-center items-center">
+                        <div class="px-[70px] py-[50px] flex md:justify-center">
                             <div class="w-[625px]">
                                 <div class="mb-8">
                                     <h2 class="text-white heading">
@@ -598,7 +655,9 @@
                                     class="my-14 h-[2px] w-full bg-separator-color"
                                 ></div>
                                 <!-- Counter Scroll -->
-                                <ul class="flex justify-between">
+                                <ul
+                                    class="flex flex-col sm:flex-row items-center justify-between"
+                                >
                                     <!-- item 1 -->
                                     <li>
                                         <h3
@@ -608,7 +667,7 @@
                                             <span class="counter">92</span>%
                                         </h3>
                                         <span
-                                            class="block text-lg font-normal text-white lg:text-[21px]"
+                                            class="block text-[1.8rem] font-normal text-white lg:text-[21px]"
                                         >
                                             Customer service inquiries
                                         </span>
@@ -623,7 +682,7 @@
                                             <span class="counter">75</span>%
                                         </h3>
                                         <span
-                                            class="block text-lg font-normal text-white lg:text-[21px]"
+                                            class="block text-[1.8rem] font-normal text-white lg:text-[21px]"
                                         >
                                             Using financial institutions
                                         </span>
@@ -646,7 +705,7 @@
                 <div class="container">
                     <div class="grid justify-center relative">
                         <h2
-                            class="heading w-[700px] text-center mx-auto"
+                            class="heading md:w-[700px] text-center mx-auto"
                             data-aos="fade-up"
                         >
                             Cost-effectively build any software
@@ -672,7 +731,7 @@
                         </div>
                         <!-- Pricing Cards -->
                         <ul
-                            class="mt-12 lg:mt-16 xl:mt-20 grid grid-cols-3 gap-[30px]"
+                            class="mt-12 lg:mt-16 xl:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
                         >
                             <!-- item 1 -->
                             <li
@@ -839,7 +898,7 @@
             </section>
             <section class="faq pt-[130px] pb-[150px]">
                 <div class="container">
-                    <div class="grid grid-cols-2">
+                    <div class="grid gap-[40px] md:grid-cols-2">
                         <article data-aos="fade-right">
                             <h2 class="heading mb-[16px]">
                                 Freely ask us for more information
@@ -870,7 +929,7 @@
                                     class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0"
                                 >
                                     <div
-                                        class="accordion-header flex items-center justify-between font-sans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
+                                        class="flex items-center justify-between font-sans desc-large font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
                                     >
                                         <p>How do I start AI SaaS?</p>
                                         <div class="accordion-icon">
@@ -898,7 +957,7 @@
                                     class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0"
                                 >
                                     <div
-                                        class="accordion-header flex items-center justify-between font-sans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
+                                        class="flex items-center justify-between font-sans desc-large font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
                                     >
                                         <p>
                                             Can I customize AI SaaS solutions?
@@ -928,7 +987,7 @@
                                     class="accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 active"
                                 >
                                     <div
-                                        class="accordion-header flex items-center justify-between font-sans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
+                                        class="flex items-center justify-between font-sans desc-large font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]"
                                     >
                                         <p>How can AI benefit my business?</p>
                                         <div class="accordion-icon">
@@ -1308,7 +1367,7 @@
                 <div class="h-[1px] w-full bg-[#DBD6CF]"></div>
                 <!-- footer content -->
                 <div
-                    class="grid grid-cols-[1fr_0.5fr_0.5fr_1fr] py-[80px] gap-[80px]"
+                    class="grid md:grid-cols-[1fr_0.5fr_0.5fr] lg:grid-cols-[1fr_0.5fr_0.5fr_1fr] py-[80px] gap-[80px]"
                 >
                     <!-- col 1 -->
                     <div class="flex flex-col gap-y-7">
@@ -1466,7 +1525,7 @@
         ></script>
 
         <!-- Owl Carousel -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script>
             $(document).ready(function () {
@@ -1477,6 +1536,17 @@
                     autoplay: true,
                     autoplayTimeout: 3000,
                     autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2, // Hiển thị 2 items trên màn hình nhỏ
+                        },
+                        768: {
+                            items: 3, // Hiển thị 3 items trên màn hình `md`
+                        },
+                        1024: {
+                            items: 5, // Hiển thị 5 items trên màn hình `lg`
+                        },
+                    },
                 });
             });
         </script>

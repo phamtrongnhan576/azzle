@@ -16,6 +16,7 @@ body {
     width: 1332px;
     max-width: calc(100% - 48px);
 }
+
 /* common */
 
 .btn {
@@ -48,7 +49,7 @@ body {
 }
 
 .heading {
-    @apply font-sans text-[8rem] font-[700] tracking-[-2] leading-[1];
+    @apply font-sans text-[3.6rem] font-[700] tracking-[-1px] leading-[1] md:text-[6rem] lg:leading-[1.1] xl:text-[8rem];
 }
 
 .desc,
@@ -56,7 +57,7 @@ body {
     @apply text-descColor;
 }
 .desc-large {
-    font-size: 2.1rem;
+    @apply text-[2.1rem];
 }
 .desc {
     font-size: 1.8rem;
@@ -133,6 +134,22 @@ body {
     content: none;
 }
 
+.menu-checkbox:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.menu-drawer {
+    padding: 40px;
+    inset: 0 50% 0 0;
+}
+.menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0%);
+}
+
+#mobile-nav .nav-item {
+    padding: 20px;
+    justify-content: space-between;
+}
 /* Banner */
 .banner {
     @apply bg-main-color  relative overflow-hidden;
@@ -143,9 +160,15 @@ body {
 
 .banner__heading {
     @apply text-center font-bold mb-6;
-    max-width: 1075px;
+
     font-size: 11rem;
     line-height: 1.1;
+}
+@media (max-width: 768px) {
+    .banner__heading {
+        font-size: 4rem;
+        line-height: 1;
+    }
 }
 
 .banner__desc {
@@ -161,12 +184,6 @@ body {
     line-height: 2.3;
 }
 
-.banner-img {
-    margin: 100px 0;
-    width: 1300px;
-    height: 600px;
-}
-
 .circle {
     background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
     filter: blur(50px);
@@ -176,11 +193,6 @@ body {
     width: 100%;
     text-align: center;
     border-top: 1px solid #dbd6cf;
-}
-
-.brand__logo {
-    width: 175px;
-    height: 40px;
 }
 
 /* pricing */
